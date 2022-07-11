@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import { Row } from './Row';
+
+const letters = [{letter: "f"} , {letter: "i"}, {letter: "g"}];
+const rows = [{letter: "l"}, {letter: "e"}, {letter: "t"}];
 
 function App() {
+  const [letters, setLetters] = useState('');
+  // const addLetter = newLetter => {
+  //   setLetters([
+  //     newLetter,
+  //     ...letters
+  //   ]);
+  // };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input
+        id="seedWord"
+        type="text"
+        onChange={e => setLetters(e.target.value)}
+      />
+      <span>{letters}</span>
+      {/* {
+        letters.map(letter =>
+          <Row
+            letter ={letter}
+          />
+        )
+      } */}
+
+      {/* <Row letter={letters.charAt(1)}/> */}
     </div>
   );
 }
