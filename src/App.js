@@ -2,24 +2,18 @@ import './App.css';
 import {useState} from 'react';
 import { Row } from './Row';
 
-const letters = [{letter: "f"} , {letter: "i"}, {letter: "g"}];
-const rows = [{letter: "l"}, {letter: "e"}, {letter: "t"}];
+// const letters = [{letter: "f"} , {letter: "i"}, {letter: "g"}];
+// const rows = [{letter: "l"}, {letter: "e"}, {letter: "t"}];
 
 function App() {
-  const [letters, setLetters] = useState('');
-  // const addLetter = newLetter => {
-  //   setLetters([
-  //     newLetter,
-  //     ...letters
-  //   ]);
-  // };
+  const [letters, setLetters] = useState([]);
 
   return (
     <div className="App">
       <input
         id="seedWord"
         type="text"
-        onChange={e => setLetters(e.target.value)}
+        onChange={e => setLetters(e.target.value,letters)}
       />
       <span>{letters}</span>
       {/* {
