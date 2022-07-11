@@ -3,7 +3,6 @@ import {useState} from 'react';
 import { Row } from './Row';
 
 // const letters = [{letter: "f"} , {letter: "i"}, {letter: "g"}];
-// const rows = [{letter: "l"}, {letter: "e"}, {letter: "t"}];
 
 function App() {
   const [letters, setLetters] = useState([]);
@@ -16,13 +15,13 @@ function App() {
         onChange={e => setLetters(e.target.value,letters)}
       />
       <span>{letters}</span>
-      {/* {
+      {
         letters.map(letter =>
           <Row
             letter ={letter}
           />
         )
-      } */}
+      }
 
       {/* <Row letter={letters.charAt(1)}/> */}
     </div>
